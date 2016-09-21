@@ -41,7 +41,7 @@ public class MatchManagerScript : MonoBehaviour {
 		//check each square in the grid
 		for(int x = 0; x < gameManager.gridWidth; x++){
 			for(int y = 0; y < gameManager.gridHeight ; y++){
-				if(x < gameManager.gridWidth - 2){	//GridHasHorizontalMatch checks 2 to the right
+				if(y < gameManager.gridHeight - 2){	//GridHasHorizontalMatch checks 2 to the right
 					//gameManager.gridWidth - 2 ensures you're never extending into
 					//a space that doesn't exist
 					matchVer = matchVer || GridHasVerticalMatch(x, y); //if match was ever set to true, it stays true forever

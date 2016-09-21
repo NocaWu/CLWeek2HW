@@ -42,9 +42,9 @@ public class GameManagerScript : MonoBehaviour {
 			if (matchManager.GridHasHorMatch ()) {
 				matchManager.RemoveHorizontalMatches ();
 
-//			} else if (matchManager.GridHasVerMatch ()) {
-//				matchManager.RemoveVerticalMatches ();
-//
+			} else if (matchManager.GridHasVerMatch ()) {
+				matchManager.RemoveVerticalMatches ();
+
 			}else {
 				//if the grid is full and there are no matches, wait for the player to make a move (and look for it in InputManager)
 				inputManager.SelectToken();

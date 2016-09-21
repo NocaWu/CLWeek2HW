@@ -125,6 +125,11 @@ public class MoveTokensScript : MonoBehaviour
             {
                 SetupTokenExchange(exchangeToken1, exchangeGridPos2, exchangeToken2, exchangeGridPos1, false); //...reverse the swap.
             }
+
+			else if (!matchManager.GridHasVerMatch() && userSwap){
+				SetupTokenExchange(exchangeToken1, exchangeGridPos2, exchangeToken2, exchangeGridPos1, false); //...reverse the swap.
+
+			}
             else { // Otherwise:
                 exchangeToken1 = null; //Make exchangeToken1 empty.
                 exchangeToken2 = null; //Make exchangeToken2 empty.
