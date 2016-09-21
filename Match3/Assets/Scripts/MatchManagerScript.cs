@@ -144,8 +144,6 @@ public class MatchManagerScript : MonoBehaviour {
 
 	//check vertical
 	public int GetVerticalMatchHeight(int x, int y){
-		Debug.Log ("131");
-
 		int matchHeight = 1;
 
 		GameObject firstVer = gameManager.gridArray[x, y]; //get the gameobject at the provided coordinates
@@ -153,15 +151,12 @@ public class MatchManagerScript : MonoBehaviour {
 		//make sure the script found a gameobject, and--if so--get its sprite
 		if(firstVer != null){
 			SpriteRenderer srVer1 = firstVer.GetComponent<SpriteRenderer>();
-			Debug.Log ("140");
 
 			//compare the gameobject's sprite to the sprite one to the right, two to the right, etc.
 			//each time the script finds a match, increment matchLength
 			//stop when it's not a match, or if the matches extend to the edge of the play area
 			for(int i = y + 1; i < gameManager.gridHeight; i++){
 				GameObject other = gameManager.gridArray[x, i];
-
-				Debug.Log ("146");
 
 				if(other != null){
 					SpriteRenderer srVer2 = other.GetComponent<SpriteRenderer>();
@@ -178,7 +173,6 @@ public class MatchManagerScript : MonoBehaviour {
 		}
 
 		return matchHeight;
-
 	}
 
 
