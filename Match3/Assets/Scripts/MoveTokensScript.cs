@@ -96,7 +96,6 @@ public class MoveTokensScript : MonoBehaviour
         //		Vector3 movePos1 = Vector3.Lerp(startPos, endPos, lerpPercent);
         //		Vector3 movePos2 = Vector3.Lerp(endPos, startPos, lerpPercent);
 
-
         /*
         The next four lines are used to move the tokens.
         movePos1 is used to move token1 from startPos to endPos.
