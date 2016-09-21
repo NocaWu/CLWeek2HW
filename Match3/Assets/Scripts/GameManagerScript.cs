@@ -14,13 +14,13 @@ public class GameManagerScript : MonoBehaviour {
 
 	public GameObject grid;
 
-	//we're declaring a MULTI-DIMENSIONAL ARRAY; this array has two dimensions, so it's a GRID, not a line
+	//declaring a MULTI-DIMENSIONAL ARRAY; this array has two dimensions, so it's a GRID, not a line
 	//that will make it easy to track tokens in a grid (which is a two-dimensional shape)
 	public GameObject[,] gridArray;
 
 	protected Object[] tokenTypes;
 
-	//TODO: use this variable. It doesn't seem to be used anywhere.
+	// used in InputMangerScript
 	GameObject selected;
 
 	public virtual void Start () {
@@ -36,12 +36,16 @@ public class GameManagerScript : MonoBehaviour {
 
 	public virtual void Update(){
 		//every frame, check whether the grid is full of tokens.
-
 		if(!GridHasEmpty()){
 			//if the grid is full of tokens and has matches, remove them.
-			if(matchManager.GridHasMatch()){
-				matchManager.RemoveMatches();
-			} else {
+
+			if (matchManager.GridHasHorMatch ()) {
+				matchManager.RemoveHorizontalMatches ();
+
+//			} else if (matchManager.GridHasVerMatch ()) {
+//				matchManager.RemoveVerticalMatches ();
+//
+			}else {
 				//if the grid is full and there are no matches, wait for the player to make a move (and look for it in InputManager)
 				inputManager.SelectToken();
 			}

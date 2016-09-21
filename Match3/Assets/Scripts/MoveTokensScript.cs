@@ -121,7 +121,7 @@ public class MoveTokensScript : MonoBehaviour
             gameManager.gridArray[(int)exchangeGridPos2.x, (int)exchangeGridPos2.y] = exchangeToken1;
             gameManager.gridArray[(int)exchangeGridPos1.x, (int)exchangeGridPos1.y] = exchangeToken2;
 
-            if (!matchManager.GridHasMatch() && userSwap) //If there's no match and the user tokens have been swapped:
+			if (!matchManager.GridHasHorMatch() && userSwap) //If there's no match and the user tokens have been swapped:
             {
                 SetupTokenExchange(exchangeToken1, exchangeGridPos2, exchangeToken2, exchangeGridPos1, false); //...reverse the swap.
             }
