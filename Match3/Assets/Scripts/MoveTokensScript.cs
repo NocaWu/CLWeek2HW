@@ -200,8 +200,9 @@ public class MoveTokensScript : MonoBehaviour
         {
             for (int y = 1; y < gameManager.gridHeight; y++) //...and for the height of the grid...
             {
-                if (gameManager.gridArray[x, y - 1] == null) //If we find an empty space:
+				if (gameManager.gridArray[x, y - 1] == null) // && gameManager.gridArray[x, y] != null) //If we find an empty space:
                 {
+					Debug.Log ("1");
                     for (int pos = y; pos < gameManager.gridHeight; pos++) //...using the y position as a reference...
                     {
                         GameObject token = gameManager.gridArray[x, pos]; //...grab a token on top of the empty space.
@@ -209,6 +210,7 @@ public class MoveTokensScript : MonoBehaviour
                         {
                             MoveTokenToEmptyPos(x, pos, x, pos - 1, token); //make it move downward.
                             movedToken = true; //Tell the game that we've moved a token.
+							Debug.Log ("2");
                         }
                     }
                 }
